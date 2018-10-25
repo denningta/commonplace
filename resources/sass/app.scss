@@ -1,0 +1,68 @@
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+.navbar-laravel {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+// Highlight search
+em {
+    background-color: #fff6db;
+    color: #eab515;
+}
+
+//Search box
+#app {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #2c3e50;
+  margin: 0px;
+  position: relative;
+}
+
+.ais-input {
+  width: 50%;
+  outline: none;
+  font-size: 15px;
+  padding: 6px;
+  box-sizing: border-box;
+  border: 2px solid lightgrey;
+  border-radius: 2px;
+  margin: 3px;
+  margin-right: 5%;
+  padding-left: 40px;
+}
+
+.ais-search-box__submit,
+.ais-clear {
+  background: none;
+  border: none;
+  position: absolute;
+  z-index: 30;
+  top: 10px;
+}
+
+.ais-search-box__submit {
+  left: 10px;
+}
+
+.ais-clear {
+  right: 10px;
+}
+
+.ais-clear--disabled {
+  display: none;
+}
+
+.ais-pagination__item--active {
+  background-color: blue;
+}
+
