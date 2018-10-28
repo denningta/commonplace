@@ -25260,6 +25260,10 @@ var app = new Vue({
 
 });
 
+$(document).ready(function () {
+  $(".dropdown-toggle").dropdown();
+});
+
 /***/ }),
 /* 165 */
 /***/ (function(module, exports, __webpack_require__) {

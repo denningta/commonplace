@@ -26,9 +26,9 @@
                       </a>
                     </li>
                     <li class="nav-item dropdown mr-5">
-                        <a id="navbarDropdown" class="" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            <i class="fas fa-caret-square-down mt-2" style="color: white; font-size: 20px"></i>
-                        </a>
+                        <button class="btn btn-secondary btn-sm dropdown-toggle navbarDropdown" type="button" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                           
+                        </button>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="/account">
@@ -41,8 +41,6 @@
                                 {{ __('Logout') }}
                             </a>
                             
-
-
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf
                             </form>

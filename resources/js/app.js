@@ -26,3 +26,7 @@ const app = new Vue({
     el: '#app',
 
 });
+
+$(document).ready(function() {
+    $(".dropdown-toggle").dropdown();
+});
