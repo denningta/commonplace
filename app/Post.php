@@ -18,7 +18,7 @@ class Post extends Model
 
     public function searchableAs()
     {
-        $algoliaIndex = 'posts';
+        $algoliaIndex = config('algolia.index');
         return $algoliaIndex;
     }
 
