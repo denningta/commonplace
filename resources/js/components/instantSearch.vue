@@ -87,7 +87,8 @@ const searchStore = createFromAlgoliaCredentials(
     'a23d936bcc0e34f892c7560d941a7234'
 );
 
-searchStore.indexName = 'posts';
+searchStore.indexName = process.env.MIX_ALGOLIA_INDEX;
+console.log(process.env.MIX_ALGOLIA_INDEX);
 
   export default {
     name: 'app',

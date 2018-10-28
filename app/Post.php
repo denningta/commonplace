@@ -18,7 +18,8 @@ class Post extends Model
 
     public function searchableAs()
     {
-        return 'posts';
+        $algoliaIndex = 'posts';
+        return $algoliaIndex;
     }
 
     public static function validatePost() {

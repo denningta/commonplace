@@ -2229,7 +2229,7 @@ function load() {
 
   // If debug isn't set in LS, and we're in Electron, try to load $DEBUG
   if (!r && typeof process !== 'undefined' && 'env' in process) {
-    r = Object({"MIX_PUSHER_APP_KEY":"","MIX_PUSHER_APP_CLUSTER":"mt1","NODE_ENV":"development"}).DEBUG;
+    r = Object({"MIX_PUSHER_APP_KEY":"","MIX_PUSHER_APP_CLUSTER":"mt1","MIX_ALGOLIA_INDEX":"posts","NODE_ENV":"development"}).DEBUG;
   }
 
   return r;
@@ -24159,7 +24159,7 @@ var debugs = {};
 var debugEnviron;
 exports.debuglog = function(set) {
   if (isUndefined(debugEnviron))
-    debugEnviron = Object({"MIX_PUSHER_APP_KEY":"","MIX_PUSHER_APP_CLUSTER":"mt1","NODE_ENV":"development"}).NODE_DEBUG || '';
+    debugEnviron = Object({"MIX_PUSHER_APP_KEY":"","MIX_PUSHER_APP_CLUSTER":"mt1","MIX_ALGOLIA_INDEX":"posts","NODE_ENV":"development"}).NODE_DEBUG || '';
   set = set.toUpperCase();
   if (!debugs[set]) {
     if (new RegExp('\\b' + set + '\\b', 'i').test(debugEnviron)) {
@@ -58532,7 +58532,7 @@ var store = __webpack_require__(199);
 // proxies limit)
 var MAX_API_KEY_LENGTH = 500;
 var RESET_APP_DATA_TIMER =
-  Object({"MIX_PUSHER_APP_KEY":"","MIX_PUSHER_APP_CLUSTER":"mt1","NODE_ENV":"development"}).RESET_APP_DATA_TIMER && parseInt(Object({"MIX_PUSHER_APP_KEY":"","MIX_PUSHER_APP_CLUSTER":"mt1","NODE_ENV":"development"}).RESET_APP_DATA_TIMER, 10) ||
+  Object({"MIX_PUSHER_APP_KEY":"","MIX_PUSHER_APP_CLUSTER":"mt1","MIX_ALGOLIA_INDEX":"posts","NODE_ENV":"development"}).RESET_APP_DATA_TIMER && parseInt(Object({"MIX_PUSHER_APP_KEY":"","MIX_PUSHER_APP_CLUSTER":"mt1","MIX_ALGOLIA_INDEX":"posts","NODE_ENV":"development"}).RESET_APP_DATA_TIMER, 10) ||
   60 * 2 * 1000; // after 2 minutes reset to first host
 
 /*
@@ -70892,7 +70892,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 var searchStore = Object(__WEBPACK_IMPORTED_MODULE_0_vue_instantsearch__["a" /* createFromAlgoliaCredentials */])('DQPIAH2MXB', 'a23d936bcc0e34f892c7560d941a7234');
 
-searchStore.indexName = 'posts';
+searchStore.indexName = "posts";
+console.log("posts");
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'app',
