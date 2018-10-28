@@ -32,8 +32,12 @@
             
         </div>
     </div>
-    <a class="btn btn-sm btn-outline-secondary mr-2 mb-5" href="/posts/{{ $post->id }}/edit">
-      <i class="fas fa-edit"></i> Edit Card
-    </a>
+
 </div>
+    <div class="row">
+
+        <a class="btn btn-sm btn-outline-secondary mr-2 mb-5 ml-3" href="/posts/{{ $post->id }}/edit">
+          <i class="fas fa-edit"></i> Edit Card
+        </a>
+    </div>
 @endsection
