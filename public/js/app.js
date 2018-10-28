@@ -70896,8 +70896,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 var searchStore = Object(__WEBPACK_IMPORTED_MODULE_0_vue_instantsearch__["a" /* createFromAlgoliaCredentials */])('DQPIAH2MXB', 'a23d936bcc0e34f892c7560d941a7234');
 
-searchStore.indexName = "posts";
-console.log("posts");
+searchStore.indexName = algoliaIndex;
+console.log(algoliaIndex);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'app',

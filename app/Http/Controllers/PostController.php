@@ -20,8 +20,9 @@ class PostController extends Controller
     public function index(Request $request) 
     {
         $user_id = Auth::id();
+        $algoliaIndex = config('algolia.index');
         $posts = Post::userPosts()->orderBy('created_at')->get();
-        return view('posts.index', compact('posts', 'user_id'));
+        return view('posts.index', compact('posts', 'user_id', 'algoliaIndex'));
     }
 
     public function create() 
