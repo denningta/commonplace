@@ -29,4 +29,17 @@ class UserController extends Controller
 
         return redirect('/account');
     }
+
+    public function userPermissions() 
+    {
+        $users = User::all();
+        return view('users.permissions', compact('users'));
+    }
+
+    public function userDelete($id) 
+    {
+        $user = User::findOrFail($id);
+        $user->delete();
+        return redirect('/dashboard');
+    }
 }

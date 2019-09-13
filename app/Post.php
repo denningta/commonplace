@@ -10,10 +10,38 @@ class Post extends Model
 {
     use Searchable;
 
+    public function book() 
+    {
+        return $this->belongsTo('App\Book');
+    }
+
     public function scopeUserPosts($query)
     {
         $user_id = Auth::id();
         return $query->where('user_id', $user_id);
+    }
+
+    public function toSearchableArray()
+    {
+        $post = $this->toArray();
+
+        $post = [
+            'id' => $post['id'],
+            'user_id' =>$post['user_id'],
+            'title' => $post['title'],
+            'type' => $post['type'],
+            'body' => $post['body'],
+            'book_title' => $this->book['title'],
+            'book_author' => $this->book['author'],
+            'publisher' => $this->book['publisher'],
+        ];
+
+        unset(
+            $post['created_at'], 
+            $post['updated_at']
+        ); // Remove non-relevant data
+
+        return $post;
     }
 
     public function searchableAs()
@@ -26,9 +54,6 @@ class Post extends Model
         request()->validate([
             'title' => 'required',
             'type' => 'required',
-            'subject' => 'required',
-            'book_title' => 'required',
-            'book_author' => 'required',
             'page' => 'required|integer',
             'body' => 'required'
         ]);

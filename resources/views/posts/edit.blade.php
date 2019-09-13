@@ -8,33 +8,32 @@
 
 <div class="row mb-3">
     <div class="col-sm-6 mt-3 mr-0 pr-3">
+      <label for="title">Card Title:</label>
         <input name="title" type="text" class="form-control form-control-lg mb-3" value="{{ $post->title }}">     
-    </div>
 
-    <div class="col-sm-5" id="details{{ $post->id }}">
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">Card Type: 
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <div class="input-group-text">#</div>
-                </div>
-                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Card Type" name="type" value="{{ $post->type }}" autocomplete="off">
+      <ul class="list-group list-group-flush">
+          <li class="list-group-item">Card Tags: 
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <div class="input-group-text">#</div>
               </div>
-            </li>
-            <li class="list-group-item">Subject: 
-                <input name="subject" type="text" class="form-control" value="{{ $post->subject }}" autocomplete="off">
-            </li>
-            <li class="list-group-item">Book Title: 
-                <input name="book_title" type="text" class="form-control" value="{{ $post->book_title }}" autocomplete="off">
-            </li>
-            <li class="list-group-item">Author: 
-                <input name="book_author" type="text" class="form-control" value="{{ $post->book_author }}" autocomplete="off">
-            </li>
-            <li class="list-group-item">Page: 
-                <input name="page" type="text" class="form-control" value="{{ $post->page }}" autocomplete="off">
-            </li>
-        </ul>
-    </div>
+              <input type="text" class="form-control" id="inlineFormInputGroup" name="type" value="{{ $post->type }}" autocomplete="off">
+            </div>
+          </li>
+          <li class="list-group-item">Book Title: 
+              <input name="book_title" type="text" class="form-control" value="{{ $post->book->title }}" autocomplete="off">
+          </li>
+          <li class="list-group-item">Author: 
+              <input name="book_author" type="text" class="form-control" value="{{ $post->book->author }}" autocomplete="off">
+          </li>
+          <li class="list-group-item">Page: 
+              <input name="page" type="text" class="form-control" value="{{ $post->page }}" autocomplete="off">
+          </li>
+      </ul>
+  </div>    
+  <div class="col p-5">
+    <a target="_blank"  href="https://www.amazon.com/gp/product/0060589469/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0060589469&linkCode=as2&tag=stenology-20&linkId=8b6d6ceb935ce4a29999d0ad2941f099"><img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=US&ASIN=0060589469&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL250_&tag=stenology-20" ></a><img src="//ir-na.amazon-adsystem.com/e/ir?t=stenology-20&l=am2&o=1&a=0060589469" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+  </div>
 </div>
 
 <!-- Create the editor container -->

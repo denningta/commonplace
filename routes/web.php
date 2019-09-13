@@ -28,7 +28,11 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/account', 'UserController@userEdit')->name('account');
     Route::patch('/account', 'UserController@userUpdate')->name('userUpdate');
+    Route::get('/permissions', 'UserController@userPermissions')->name('userPermissions');
 
+    Route::get('/books', 'BookController@index')->name('bookIndex');
+    Route::get('/books/{book}', 'BookController@edit')->name('bookEdit');
+    Route::patch('/books/{book}', 'BookController@update')->name('bookUpdate');
  });
 
 

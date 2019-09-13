@@ -70882,28 +70882,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
-var searchStore = Object(__WEBPACK_IMPORTED_MODULE_0_vue_instantsearch__["a" /* createFromAlgoliaCredentials */])('DQPIAH2MXB', 'a23d936bcc0e34f892c7560d941a7234');
+var searchStorePosts = Object(__WEBPACK_IMPORTED_MODULE_0_vue_instantsearch__["a" /* createFromAlgoliaCredentials */])('DQPIAH2MXB', 'a23d936bcc0e34f892c7560d941a7234');
 
-searchStore.indexName = algoliaIndex;
-console.log(algoliaIndex);
+searchStorePosts.indexName = algoliaIndex;
+console.log(searchStorePosts.indexName);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'app',
   props: ['user_id'],
   mounted: function mounted() {
-    searchStore.queryParameters = { filters: 'user_id: ' + this.user_id };
+    searchStorePosts.queryParameters = { filters: 'user_id: ' + this.user_id };
   },
 
   methods: {
@@ -70913,7 +70903,7 @@ console.log(algoliaIndex);
   },
   data: function data() {
     return {
-      searchStore: searchStore
+      searchStorePosts: searchStorePosts
     };
   }
 });
@@ -70928,7 +70918,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "ais-index",
-    { attrs: { "search-store": _vm.searchStore } },
+    { attrs: { "search-store": _vm.searchStorePosts } },
     [
       _c("ais-search-box"),
       _vm._v(" "),
@@ -70972,139 +70962,81 @@ var render = function() {
                       ])
                     ]),
                     _vm._v(" "),
-                    _c(
-                      "p",
-                      { staticClass: "blog-post-meta" },
-                      [
-                        _c("ais-highlight", {
-                          attrs: {
-                            result: result,
-                            "attribute-name": "created_at"
-                          }
-                        })
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c("p", [
-                      _c(
-                        "a",
-                        {
-                          attrs: {
-                            "data-toggle": "collapse",
-                            href: "#details" + result.id,
-                            role: "button",
-                            "aria-expanded": "false",
-                            "aria-controls": "details" + result.id
-                          }
-                        },
-                        [
-                          _c("span", {
-                            attrs: { "data-feather": "plus-circle" }
-                          }),
-                          _vm._v(" Show Details\n              ")
-                        ]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass: "collapse",
-                        attrs: { id: "details" + result.id }
-                      },
-                      [
-                        _c(
-                          "ul",
-                          { staticClass: "list-group list-group-flush" },
-                          [
-                            _c(
-                              "li",
-                              { staticClass: "list-group-item" },
-                              [
-                                _vm._v("\n                  Card Type: "),
-                                _c("ais-highlight", {
-                                  attrs: {
-                                    result: result,
-                                    "attribute-name": "type"
-                                  }
-                                })
-                              ],
-                              1
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "li",
-                              { staticClass: "list-group-item" },
-                              [
-                                _vm._v("\n                  Subject: "),
-                                _c("ais-highlight", {
-                                  attrs: {
-                                    result: result,
-                                    "attribute-name": "subject"
-                                  }
-                                })
-                              ],
-                              1
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "li",
-                              { staticClass: "list-group-item" },
-                              [
-                                _vm._v("\n                  Book Title: "),
-                                _c("ais-highlight", {
-                                  attrs: {
-                                    result: result,
-                                    "attribute-name": "book_title"
-                                  }
-                                })
-                              ],
-                              1
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "li",
-                              { staticClass: "list-group-item" },
-                              [
-                                _vm._v("\n                  Author: "),
-                                _c("ais-highlight", {
-                                  attrs: {
-                                    result: result,
-                                    "attribute-name": "book_author"
-                                  }
-                                })
-                              ],
-                              1
-                            ),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "list-group-item" }, [
-                              _vm._v(
-                                "\n                  Page: " +
-                                  _vm._s(result.page) +
-                                  "\n                "
-                              )
-                            ])
-                          ]
-                        )
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      { staticClass: "mt-4 mb-2" },
-                      [
-                        _c("ais-snippet", {
-                          attrs: { result: result, "attribute-name": "body" }
-                        }),
+                    _c("div", { staticClass: "row ml-2" }, [
+                      _c("ul", { staticClass: "list-group" }, [
+                        _c("li", { staticClass: "card-details" }, [
+                          _c(
+                            "a",
+                            {
+                              staticClass: "harmony",
+                              attrs: {
+                                target: "_blank",
+                                href:
+                                  "https://www.amazon.com/gp/product/0060589469/ref=as_li_tl?ie=UTF8&tag=stenology-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=0060589469&linkId=48fe482369b6fcefb1533ea811d23d74"
+                              }
+                            },
+                            [
+                              _c("ais-highlight", {
+                                attrs: {
+                                  result: result,
+                                  "attribute-name": "book_title"
+                                }
+                              })
+                            ],
+                            1
+                          )
+                        ]),
                         _vm._v(" "),
-                        _c("a", { attrs: { href: "posts/" + result.id } }, [
-                          _vm._v("Show More")
-                        ])
-                      ],
-                      1
-                    )
-                  ])
+                        _c(
+                          "li",
+                          { staticClass: "card-details" },
+                          [
+                            _c("ais-highlight", {
+                              attrs: {
+                                result: result,
+                                "attribute-name": "book_author"
+                              }
+                            })
+                          ],
+                          1
+                        )
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "mt-3 mb-2" },
+                    [
+                      _c("ais-snippet", {
+                        attrs: { result: result, "attribute-name": "body" }
+                      }),
+                      _vm._v(" "),
+                      _c("a", { attrs: { href: "posts/" + result.id } }, [
+                        _vm._v("Show More")
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "row mt-3 ml-2" }, [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "badge badge-primary",
+                            attrs: { href: "#" }
+                          },
+                          [
+                            _c("ais-highlight", {
+                              attrs: {
+                                result: result,
+                                "attribute-name": "type"
+                              }
+                            })
+                          ],
+                          1
+                        )
+                      ])
+                    ],
+                    1
+                  )
                 ])
               ]
             }

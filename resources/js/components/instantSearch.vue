@@ -1,5 +1,5 @@
 <template>
-        <ais-index :search-store="searchStore">
+        <ais-index :search-store="searchStorePosts">
 
         <ais-search-box></ais-search-box>
 
@@ -15,7 +15,6 @@
                         <ais-highlight :result="result" attribute-name="title"></ais-highlight>
                         </a>
                       </h2>
-
                     </div>
 
                       <div class="col-sm">
@@ -25,38 +24,29 @@
                       </div>
 
                   </div>
-                  <p class="blog-post-meta"> 
-                    <ais-highlight :result="result" attribute-name="created_at"></ais-highlight>
-                  </p>
-                  <p>
-                    <a class="" data-toggle="collapse" :href="'#details' + result.id" role="button" aria-expanded="false" :aria-controls="'details' + result.id">
-                      <span data-feather="plus-circle"></span> Show Details
-                    </a>
-                  </p>
-                  <div class="collapse" :id="'details' + result.id">
-                    <ul class="list-group list-group-flush">
-                      <li class="list-group-item">
-                        Card Type: <ais-highlight :result="result" attribute-name="type"></ais-highlight>
+                  <div class="row ml-2">
+                    <ul class="list-group">
+                      <li class="card-details">
+                        <a class="harmony" target="_blank" href="https://www.amazon.com/gp/product/0060589469/ref=as_li_tl?ie=UTF8&tag=stenology-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=0060589469&linkId=48fe482369b6fcefb1533ea811d23d74">
+                          <ais-highlight :result="result" attribute-name="book_title"></ais-highlight>
+                        </a>
                       </li>
-                      <li class="list-group-item">
-                        Subject: <ais-highlight :result="result" attribute-name="subject"></ais-highlight>
-                      </li>
-                      <li class="list-group-item">
-                        Book Title: <ais-highlight :result="result" attribute-name="book_title"></ais-highlight>
-                      </li>
-                      <li class="list-group-item">
-                        Author: <ais-highlight :result="result" attribute-name="book_author"></ais-highlight>
-                      </li>
-                      <li class="list-group-item">
-                        Page: {{ result.page }}
+                      <li class="card-details">
+                        <ais-highlight :result="result" attribute-name="book_author"></ais-highlight>
                       </li>
                     </ul>
                   </div>
+                    
+                  </div>
 
-                  <div class="mt-4 mb-2">
-                    <!-- <ais-highlight :result="result" attribute-name="body"></ais-highlight> -->
+                  <div class="mt-3 mb-2">
                     <ais-snippet :result="result" attribute-name="body"></ais-snippet>
                     <a :href="'posts/' + result.id">Show More</a>
+                    <div class="row mt-3 ml-2">
+                      <a href="#" class="badge badge-primary">
+                        <ais-highlight :result="result" attribute-name="type"></ais-highlight>
+                      </a>
+                    </div>
                   </div>
 
                 </div>
@@ -82,19 +72,19 @@
 
 <script>
 import { createFromAlgoliaCredentials } from 'vue-instantsearch';
-const searchStore = createFromAlgoliaCredentials(
+const searchStorePosts = createFromAlgoliaCredentials(
     'DQPIAH2MXB', 
     'a23d936bcc0e34f892c7560d941a7234'
 );
 
-searchStore.indexName = algoliaIndex;
-console.log(algoliaIndex);
+searchStorePosts.indexName = algoliaIndex;
+console.log(searchStorePosts.indexName);
 
   export default {
     name: 'app',
     props: ['user_id'],
     mounted () {
-        searchStore.queryParameters = {filters: 'user_id: ' + this.user_id}
+        searchStorePosts.queryParameters = {filters: 'user_id: ' + this.user_id}
     },
     methods: {
       onPageChange(page) {
@@ -103,7 +93,7 @@ console.log(algoliaIndex);
     },
     data: function() {
       return {
-        searchStore
+        searchStorePosts,
       };
     },
   }

@@ -29,6 +29,18 @@
       <h1 class="h2">Account Details</h1>
       <div class="btn-toolbar mb-2 mb-md-0">
       </div>
+
+    @elseif (in_array(Route::current()->getName(), ['userPermissions']))
+      <h1 class="h2">User Management</h1>
+      <div class="btn-toolbar mb-2 mb-md-0">
+
+      </div>
+
+    @elseif (in_array(Route::current()->getName(), ['bookEdit']))
+      <h1 class="h2">Affiliate Links</h1>
+      <div class="btn-toolbar mb-2 mb-md-0">
+
+      </div>
       
     @else
       <h1 class="h2">Dashboard</h1>

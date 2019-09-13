@@ -37,7 +37,6 @@ class PostController extends Controller
         Post::create([
             'title' => request('title'),
             'type' => request('type'),
-            'subject' => request('subject'),
             'book_title' => request('book_title'),
             'book_author' => request('book_author'),
             'page' => request('page'),
@@ -45,7 +44,7 @@ class PostController extends Controller
             'user_id' => auth()->id()
         ])->searchable();
 
-        return redirect('/dashboard');
+        return route('/dashboard');
     }
 
     public function show (Post $post)
